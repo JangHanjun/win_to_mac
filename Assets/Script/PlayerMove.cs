@@ -150,7 +150,7 @@ public class PlayerMove : MonoBehaviour {
     void slidingFalse() {
         maxSpeed = maxSpeed/2.0f;
         animator.SetBool("isSliding", false);
-        gameObject.layer = 11;                                                                                                            // invincible time end
+        gameObject.layer = 11;                                                               // invincible time end
     }
     void TFslide() {
         if (canSlide == false)
@@ -173,8 +173,8 @@ public class PlayerMove : MonoBehaviour {
         }
 
         // Damaged Effect
-        gameObject.layer = 12;                                                                                                          //change layer to Player Damaged layer
-        spriteRenderer.color = new Color(1, 1, 1, 0.5f);                                               // Damaged Effect
+        gameObject.layer = 12;                                                              //change layer to Player Damaged layer
+        spriteRenderer.color = new Color(1, 1, 1, 0.5f);                                    // Damaged Effect
         // Enemy > Add Force
         int dir = transform.position.x - enemyPos.x > 0 ? 1 : -1;                           // enemy is on right = 1, else = -1
         rigid.AddForce(new Vector2(dir, 1) * 7, ForceMode2D.Impulse);
@@ -182,7 +182,7 @@ public class PlayerMove : MonoBehaviour {
         Invoke("returnLayer", 1);  // invincible time
     }
     void returnLayer() {
-        gameObject.layer = 11;                                                                                                              // change layer to Player layer
+        gameObject.layer = 11;                                                              // change layer to Player layer
         spriteRenderer.color = new Color(1, 1, 1, 1);
     }
 
