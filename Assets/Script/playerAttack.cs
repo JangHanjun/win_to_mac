@@ -7,7 +7,7 @@ public class playerAttack : MonoBehaviour
     public GameObject bullet;
     public Transform pos;    
     public static float atk;
-
+    
     public static float coolTime;   // 공속
     private float curTime;
 

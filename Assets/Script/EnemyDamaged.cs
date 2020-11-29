@@ -22,7 +22,7 @@ public class EnemyDamaged : MonoBehaviour
         // todo : 외부에서 코루틴을 시작하는 방법 알아보자
         StartCoroutine(Damaged());
     }
-
+    
     IEnumerator Damaged() {
         spriteRenderer.color = Color.red;
         yield return new WaitForSeconds(0.1f);
