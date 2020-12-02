@@ -7,6 +7,7 @@ public class AttackingMonster : MonoBehaviour {
     SpriteRenderer spriteRenderer;
     public int moveDir;    // Moving direction, Random
     public Transform target; //target = player
+    
 
     void Awake() {
         rigid = GetComponent<Rigidbody2D>();
@@ -25,7 +26,6 @@ public class AttackingMonster : MonoBehaviour {
     void FixedUpdate() {
         rigid.velocity = new Vector2(moveDir, rigid.velocity.y);   // no jump monster
     }
-
     void monsterAI() {
         moveDir = Random.Range(-1, 2);   // -1<= ranNum <2
         Invoke("monsterAI", 3);

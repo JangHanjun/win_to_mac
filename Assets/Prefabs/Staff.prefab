@@ -88,5 +88,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78e93b58e17dee5468746aba3ffbb6ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  buffTime: 2
+  buffTime: 10
   icon: {fileID: 0}
