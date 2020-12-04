@@ -7,6 +7,9 @@ public class playerAttack : MonoBehaviour
     public GameObject bullet;
     public Transform pos;    
     public static float atk;
+    public static float fireAtk;
+    public static float waterAtk;
+    public static float grassAtk;
     
     public static float coolTime;   // 공속
     private float curTime;
@@ -14,6 +17,9 @@ public class playerAttack : MonoBehaviour
     void Awake(){
         atk = 2f;
         coolTime = 1f;
+        fireAtk = 10f;
+        waterAtk = 1f;
+        grassAtk = 1f;
     }
     void Update(){
         // Mouse Position

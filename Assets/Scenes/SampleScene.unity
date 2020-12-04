@@ -218,6 +218,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 5
   curHp: 5
+  fireDef: 0
+  waterDef: 0
+  grassDef: 0
   dropItem: {fileID: 0}
 --- !u!212 &236444183
 SpriteRenderer:
@@ -2995,6 +2998,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 5
   curHp: 5
+  fireDef: 1
+  waterDef: 1
+  grassDef: 1
   dropItem: {fileID: 3996357196499270665, guid: 8f2eba15c113ff645a93b0d164ace475, type: 3}
 --- !u!212 &922908446
 SpriteRenderer:

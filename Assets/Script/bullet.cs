@@ -6,11 +6,18 @@ public class bullet : MonoBehaviour {
     public float  speed;                             // 탄속
     public float destoryTime;                       // 사정거리
     float power;                                    // 공격력
+    float fPower;                                   // 불공격력
+    float wPower;                                   // 물공격력
+    float gPower;                                   // 풀공격력
+
     public float distance;
     public LayerMask layer;
 
     void Awake(){
         power = playerAttack.atk;
+        fPower = playerAttack.fireAtk;
+        wPower = playerAttack.waterAtk;
+        gPower = playerAttack.grassAtk;
     }
     void Start() {
         Destroy(gameObject, destoryTime);
@@ -27,6 +34,7 @@ public class bullet : MonoBehaviour {
                 EnemyDamaged enemy = ray.collider.GetComponent<EnemyDamaged>();
                 Debug.Log("Enemy Hit");
                 enemy.curHp -= power;
+                enemy.curHp -= (fPower - enemy.fireDef);
                 enemy.beforeDamaged();
                 
             }

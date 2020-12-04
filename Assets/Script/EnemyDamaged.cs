@@ -7,6 +7,11 @@ public class EnemyDamaged : MonoBehaviour
     public float maxHp;
     public float curHp;
 
+    // stat
+    public float fireDef;
+    public float waterDef;
+    public float grassDef;
+
     Rigidbody2D rigid;
     BoxCollider2D boxCollider2D;
     SpriteRenderer spriteRenderer;
