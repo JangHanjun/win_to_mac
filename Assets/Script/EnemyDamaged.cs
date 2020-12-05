@@ -8,6 +8,7 @@ public class EnemyDamaged : MonoBehaviour
     public float curHp;
 
     // stat
+    public float Def;
     public float fireDef;
     public float waterDef;
     public float grassDef;

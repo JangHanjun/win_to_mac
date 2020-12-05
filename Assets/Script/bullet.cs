@@ -34,7 +34,6 @@ public class bullet : MonoBehaviour {
                 EnemyDamaged enemy = ray.collider.GetComponent<EnemyDamaged>();
                 Debug.Log("Enemy Hit");
                 enemy.curHp -= power;
-                enemy.curHp -= (fPower - enemy.fireDef);
                 enemy.beforeDamaged();
                 
             }

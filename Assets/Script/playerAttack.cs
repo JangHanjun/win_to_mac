@@ -15,11 +15,11 @@ public class playerAttack : MonoBehaviour
     private float curTime;
 
     void Awake(){
-        atk = 2f;
         coolTime = 1f;
-        fireAtk = 10f;
-        waterAtk = 1f;
-        grassAtk = 1f;
+        atk = 60f;
+        fireAtk = 60f;
+        waterAtk = 60f;
+        grassAtk = 60f;
     }
     void Update(){
         // Mouse Position

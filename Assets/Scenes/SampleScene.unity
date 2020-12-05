@@ -218,6 +218,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHp: 5
   curHp: 5
+  Def: 0
   fireDef: 0
   waterDef: 0
   grassDef: 0
@@ -2996,11 +2997,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb96cf617a11948409637db3063b7fd2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxHp: 5
-  curHp: 5
-  fireDef: 1
-  waterDef: 1
-  grassDef: 1
+  maxHp: 200
+  curHp: 200
+  Def: 200
+  fireDef: 200
+  waterDef: 200
+  grassDef: 200
   dropItem: {fileID: 3996357196499270665, guid: 8f2eba15c113ff645a93b0d164ace475, type: 3}
 --- !u!212 &922908446
 SpriteRenderer:
