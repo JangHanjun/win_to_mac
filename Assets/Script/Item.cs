@@ -49,5 +49,20 @@ public class Item : MonoBehaviour
             PlayerMove.maxSpeed *= 3;
         }
         */
+
+        if(collision.gameObject.tag =="Player"){
+            Debug.Log("무적 시간 주어짐");
+            StartCoroutine("playerInvincible");
+        }
+    }
+
+    IEnumerator playerInvincible() {
+        GameObject player = GameObject.FindWithTag("Player");
+        player.layer = 12;
+        player.GetComponent<PlayerMove>().isInvincible = true;
+        yield return new WaitForSeconds(100f);
+        player.GetComponent<PlayerMove>().isInvincible = false;
+        Debug.Log("무적 끝");
+        player.layer = 11;
     }
 }

@@ -35,6 +35,7 @@ public class PlayerMove : MonoBehaviour {
     //Sliding
     [SerializeField]
     bool canSlide;
+    public bool isInvincible;
 
     // Stat
     public static int MaxHp;
@@ -150,7 +151,10 @@ public class PlayerMove : MonoBehaviour {
     void slidingFalse() {
         maxSpeed = maxSpeed/2.0f;
         animator.SetBool("isSliding", false);
-        gameObject.layer = 11;                                                               // invincible time end
+        if(isInvincible) {
+        } else {
+            gameObject.layer = 11;          // invincible time end
+        }                                                           
     }
     void TFslide() {
         if (canSlide == false)
