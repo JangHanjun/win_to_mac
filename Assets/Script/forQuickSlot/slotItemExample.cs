@@ -21,12 +21,15 @@ public class slotItemExample : MonoBehaviour
         if(Input.inputString == (transform.parent.GetComponent<Slot>().num + 1).ToString()){
             // use item
             Debug.Log("아이템을 사용했습니다");
-            playerAttack.coolTime = playerAttack.coolTime/2.0f;     // 버프 효과 입력
+            //playerAttack.coolTime = playerAttack.coolTime/2.0f;     // 버프 효과 입력
+            GameObject player = GameObject.FindWithTag("Player");
+            player.layer = 12;
+            player.GetComponent<PlayerMove>().isInvincible = true;
             StartCoroutine(BuffSystem());
         }
     }
     WaitForSeconds waitTime = new WaitForSeconds(0.1f);
-    IEnumerator BuffSystem() {
+    /*IEnumerator BuffSystem() {
         while (curTime > 0) {
             curTime -= 0.1f;
             icon.fillAmount = curTime/buffTime;
@@ -35,6 +38,19 @@ public class slotItemExample : MonoBehaviour
         Debug.Log("버프 끝");
         playerAttack.coolTime = playerAttack.coolTime*2.0f;         // 버프를 종료하는 효과 입력
         Destroy(this.gameObject);    
+    }*/
+
+    IEnumerator BuffSystem() {
+        while (curTime > 0) {
+            curTime -= 0.1f;
+            icon.fillAmount = curTime/buffTime;
+            yield return waitTime;
+        }
+        GameObject player = GameObject.FindWithTag("Player");
+        player.GetComponent<PlayerMove>().isInvincible = false;
+        Debug.Log("무적 끝");
+        player.layer = 11;
+        Destroy(this.gameObject);
     }
 
 }
