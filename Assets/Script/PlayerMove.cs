@@ -9,7 +9,6 @@ public class PlayerMove : MonoBehaviour {
     GameManager gameManager;
 
     // Walk
-    [SerializeField]
     public static float maxSpeed;
 
     //Jump
@@ -74,10 +73,7 @@ public class PlayerMove : MonoBehaviour {
 
         //JUMP
         isGround = Physics2D.OverlapCircle(pos.position, checkRadius, islayer);
-        if (isGround == true && Input.GetKeyDown(KeyCode.Space) && jumpCount > 0) {
-            rigid.velocity = Vector2.up * jumpPower;
-        }
-        if (isGround == false && Input.GetKeyDown(KeyCode.Space) && jumpCount > 0) {
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 0) {
             rigid.velocity = Vector2.up * jumpPower;
         }
         if (Input.GetKeyUp(KeyCode.Space)) {
