@@ -6,7 +6,7 @@ public class PlayerMove : MonoBehaviour {
     Rigidbody2D rigid;
     SpriteRenderer spriteRenderer;
     Animator animator;
-    GameManager gameManager;
+    public GameManager gameManager;
 
     // Walk
     public static float maxSpeed;
@@ -73,7 +73,7 @@ public class PlayerMove : MonoBehaviour {
 
         //JUMP
         isGround = Physics2D.OverlapCircle(pos.position, checkRadius, islayer);
-        if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 0) {
+        if (Input.GetKeyDown(KeyCode.Space) && jumpCount > 0 && !Input.GetButton("Vertical")) {
             rigid.velocity = Vector2.up * jumpPower;
         }
         if (Input.GetKeyUp(KeyCode.Space)) {
@@ -81,6 +81,11 @@ public class PlayerMove : MonoBehaviour {
         }
         if (isGround) {
             jumpCount = maxJump;
+        }
+
+        //DownJump
+        if (Input.GetKeyDown(KeyCode.Space) && Input.GetButton("Vertical")){
+            Debug.Log("아래점프");
         }
 
         // Sliding
@@ -186,10 +191,17 @@ public class PlayerMove : MonoBehaviour {
         spriteRenderer.color = new Color(1, 1, 1, 1);
     }
 
-
-    //Stage
-    void OnTriggerEnter2D(Collider2D collision){
-        if (collision.gameObject.tag == "Finish"){
+    // Money , Stage
+    void OnTriggerEnter2D(Collider2D collision) {
+        //Money
+        if(collision.gameObject.tag == "Money"){
+            Debug.Log("돈");
+            gameManager.playerMoney += 100;
+            // Destroy
+            collision.gameObject.SetActive(false);
+        } 
+        // Stage
+        else if (collision.gameObject.tag == "Finish"){
             Debug.Log("StageClear");
         }
     }

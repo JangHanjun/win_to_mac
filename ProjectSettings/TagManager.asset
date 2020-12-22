@@ -8,6 +8,7 @@ TagManager:
   - MovingPlatform
   - Enemy
   - Weapon
+  - Money
   layers:
   - Default
   - TransparentFX

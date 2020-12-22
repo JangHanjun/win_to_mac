@@ -6,6 +6,9 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public PlayerMove player;
+    // 게임 재화
+    public int playerMoney;
+    // 스테이지
     public int stageIndex;
     public GameObject[] stages;  //스테이지 배열
 
@@ -28,20 +31,7 @@ public class GameManager : MonoBehaviour
     void stopGame(){
         Time.timeScale = 0;
     }
-    //Stage
-    public void NextStage(){
-        if(stageIndex < stages.Length){
-            stages[stageIndex].SetActive(false);
-            stageIndex++;
-            stages[stageIndex].SetActive(true);
-            PlayerRespwan();
-        } else{
-            // 게임이 끝난 상태
-            stopGame();
-            Debug.Log("CLear");
 
-        }
-    }
 
     void PlayerRespwan(){
         player.velocityZero();
