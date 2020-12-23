@@ -22,7 +22,10 @@ public class PlayerMove : MonoBehaviour {
     public int jumpCount;
     public int maxJump;
 
-    //WallJump
+    // DownJump
+    GameObject downPlatform;
+
+    // WallJump
     Vector3 dirVec; //wallJumpRay's direction
     //GameObject scanObject; // for debug
     float h;
@@ -86,6 +89,8 @@ public class PlayerMove : MonoBehaviour {
         //DownJump
         if (Input.GetKeyDown(KeyCode.Space) && Input.GetButton("Vertical")){
             Debug.Log("아래점프");
+            GameObject.FindWithTag("DownPlatform").GetComponent<DownPlatform>().ChangeLayer();
+            Debug.Log("아래점프2");
         }
 
         // Sliding
