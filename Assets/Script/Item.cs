@@ -10,15 +10,13 @@ public class Item : MonoBehaviour
     //public int value;
 
     private void OnTriggerEnter2D(Collider2D collision){
-        /* 공속증가 아이템
-           공속을 증가시키기 위해서는 coolTime을 1보다 큰 수로 나눠야 한다.
-            1보다 작은 수로 나누면 오히려 느려지는 효과가 있다.
+        //공속증가 아이템
+        //공속을 증가시키기 위해서는 coolTime을 1보다 큰 수로 나눠야 한다.
+        //1보다 작은 수로 나누면 오히려 느려지는 효과가 있다.
         if(collision.gameObject.tag =="Player"){
-            Debug.Log("공속 증가");
-            Destroy(gameObject);
-            playerAttack.coolTime = playerAttack.coolTime/4.0f;
+            StartCoroutine("reduceCoolTime");
         }
-        */
+        
 
         /*
         // HP 회복 아이템
@@ -50,10 +48,21 @@ public class Item : MonoBehaviour
         }
         */
 
+        /*
         if(collision.gameObject.tag =="Player"){
             Debug.Log("무적 시간 주어짐");
             StartCoroutine("playerInvincible");
         }
+        */
+    }
+
+    IEnumerator reduceCoolTime(){
+        Debug.Log("Speed up");
+        playerAttack.coolTime = playerAttack.coolTime/4.0f;
+        yield return new WaitForSeconds(4f);
+        Debug.Log("reduce speed");
+        playerAttack.coolTime = playerAttack.coolTime * 4.0f;
+        Destroy(gameObject);
     }
 
     IEnumerator playerInvincible() {
