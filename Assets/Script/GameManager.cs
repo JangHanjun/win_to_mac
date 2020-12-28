@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -12,6 +13,9 @@ public class GameManager : MonoBehaviour
     public int stageIndex;
     public GameObject[] stages;  //스테이지 배열
 
+    // UI
+    public Text UIMoney;
+
     private static GameManager _instance;
     public static GameManager Instance {
         get {
@@ -21,7 +25,9 @@ public class GameManager : MonoBehaviour
             return _instance;
         }
     }
-
+    void Update() {
+        UIMoney.text = playerMoney.ToString();
+    }
     // GameOver
     public void GameOver() {
         Debug.Log("Game Over...");

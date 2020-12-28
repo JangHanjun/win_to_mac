@@ -41,7 +41,8 @@ public class PlayerMove : MonoBehaviour {
 
     // Stat
     public static int MaxHp;
-    public static int currentHp;  
+    public static int currentHp;
+    public int currentShield;
 
     //Stage
 
@@ -110,6 +111,7 @@ public class PlayerMove : MonoBehaviour {
         else if (h == 1)
             dirVec = Vector3.right;
     }
+    
     void FixedUpdate() {
         // Moving
         float h = Input.GetAxisRaw("Horizontal");
@@ -175,7 +177,11 @@ public class PlayerMove : MonoBehaviour {
     }
     void playerDamaged(Vector2 enemyPos) {
         // Hp decrease
-        currentHp -= 1;
+        if(currentShield > 0){
+            currentShield -= 1;
+        } else {
+            currentHp -=1;
+        }
 
         // Game Over Check
         if (currentHp < 1) {
