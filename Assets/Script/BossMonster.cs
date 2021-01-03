@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class BossMonster : MonoBehaviour {
-    public Transform target;                                                     //target = player
+    /*
     Vector2 playerPos;
     // Vector2 atk1Pos;
 
@@ -49,6 +49,7 @@ public class BossMonster : MonoBehaviour {
         }
         Invoke("prePattern1", 2f);
     }
+    */
 
 
 }
