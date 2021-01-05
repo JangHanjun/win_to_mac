@@ -4,6 +4,9 @@ using UnityEngine;
 
 public class BossMonsterPattern : MonoBehaviour
 {
+    public enum BossState { Pattern1, Pattern2, Pattern3 }
+    public BossState pattern;
+    // For Pattern1
     private bool isAttacking = false;
     Vector3 playerPos;
     Vector3 whereToAtk;
@@ -12,9 +15,7 @@ public class BossMonsterPattern : MonoBehaviour
     private void OnTriggerStay2D(Collider2D other) {
         if(other.tag == "Player"){
             playerPos = other.transform.position;
-            StartCoroutine("BeforeAttack");
-        }
-            
+        }    
     }
 
     // OntriggerStay는 프레임 단위로 실행되기 때문에 코루틴을 이용
@@ -23,7 +24,7 @@ public class BossMonsterPattern : MonoBehaviour
         if(isAttacking == false) {
             whereToAtk = playerPos;
             isAttacking = true;
-            Debug.Log("감지한 위치 : " + whereToAtk);
+            //Debug.Log("감지한 위치 : " + whereToAtk);
             Instantiate(warning, whereToAtk, transform.rotation);
             yield return new WaitForSeconds(2f);
             StartCoroutine("Attack");
@@ -31,10 +32,10 @@ public class BossMonsterPattern : MonoBehaviour
     }
 
     IEnumerator Attack(){
-        Debug.Log("그래서 공격중임");
+        //Debug.Log("그래서 공격중임");
         Instantiate(Atk1, whereToAtk, transform.rotation);
         yield return new WaitForSeconds(1f);
-        Debug.Log("공격 끝남");
+        //Debug.Log("공격 끝남");
         isAttacking = false;
     }
 }

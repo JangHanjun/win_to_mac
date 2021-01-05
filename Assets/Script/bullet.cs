@@ -32,7 +32,7 @@ public class bullet : MonoBehaviour {
             Destroy(gameObject);
             if (ray.collider.tag == "Enemy") {
                 EnemyDamaged enemy = ray.collider.GetComponent<EnemyDamaged>();
-                Debug.Log("Enemy Hit");
+                //Debug.Log("Enemy Hit");
                 enemy.curHp -= power;
                 enemy.beforeDamaged();
                 

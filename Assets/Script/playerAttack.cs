@@ -16,10 +16,10 @@ public class playerAttack : MonoBehaviour
 
     void Awake(){
         coolTime = 1f;
-        atk = 60f;
-        fireAtk = 60f;
-        waterAtk = 60f;
-        grassAtk = 60f;
+        atk = 3f;
+        fireAtk = 3f;
+        waterAtk = 3f;
+        grassAtk = 3f;
     }
     void Update(){
         // Mouse Position
