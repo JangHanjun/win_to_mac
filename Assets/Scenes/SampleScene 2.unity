@@ -493,7 +493,6 @@ GameObject:
   - component: {fileID: 419060355}
   - component: {fileID: 419060357}
   - component: {fileID: 419060356}
-  - component: {fileID: 419060358}
   m_Layer: 0
   m_Name: GameObject
   m_TagString: Untagged
@@ -527,6 +526,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dd7490686acf94de0885eb723ab08849, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  pattern: 0
+  itself: {fileID: 0}
   warning: {fileID: 3642283503744712513, guid: 321ddbd3ff8f1c64b82c45030e0857d6, type: 3}
   Atk1: {fileID: 1990009598953132024, guid: d355d5114c82a5643bd204cd85cb2e10, type: 3}
 --- !u!70 &419060357
@@ -545,18 +546,6 @@ CapsuleCollider2D:
   m_Offset: {x: 0, y: 0}
   m_Size: {x: 20, y: 1}
   m_Direction: 0
---- !u!114 &419060358
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 419060354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0c31f455c49c4bd085005922103b891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &434999981
 GameObject:
   m_ObjectHideFlags: 0
@@ -3179,7 +3168,6 @@ GameObject:
   - component: {fileID: 923657775}
   - component: {fileID: 923657774}
   - component: {fileID: 923657773}
-  - component: {fileID: 923657772}
   m_Layer: 13
   m_Name: Slime_c_Move_2
   m_TagString: Enemy
@@ -3187,18 +3175,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &923657772
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 923657771}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d0c31f455c49c4bd085005922103b891, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!61 &923657773
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -3259,7 +3235,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxHp: 100
-  curHp: 100
+  curHp: 61
   Def: 0
   fireDef: 0
   waterDef: 0
