@@ -544,7 +544,7 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
-  m_Size: {x: 20, y: 1}
+  m_Size: {x: 40.56, y: 1}
   m_Direction: 0
 --- !u!1 &434999981
 GameObject:
@@ -3523,7 +3523,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3505528992069467935, guid: 91e9cc795b142b64eb81b7c1c6209b47, type: 3}
       propertyPath: m_LocalPosition.z
-      value: 0
+      value: -1
       objectReference: {fileID: 0}
     - target: {fileID: 3505528992069467935, guid: 91e9cc795b142b64eb81b7c1c6209b47, type: 3}
       propertyPath: m_LocalRotation.x
@@ -4161,7 +4161,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &1555065757
 Transform:
   m_ObjectHideFlags: 0
@@ -4199,7 +4199,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &1686985020
 Transform:
   m_ObjectHideFlags: 0

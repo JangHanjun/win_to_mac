@@ -147,6 +147,7 @@ public class PlayerMove : MonoBehaviour {
             }
         } else {
             animator.SetBool("isClimbing", false);
+            onWall = false;
         }
     }
 
@@ -213,7 +214,7 @@ public class PlayerMove : MonoBehaviour {
         } 
         // Stage
         else if (collision.gameObject.tag == "Finish"){
-            Debug.Log("StageClear");
+            gameManager.NextStage();
         }
     }
     public void velocityZero(){

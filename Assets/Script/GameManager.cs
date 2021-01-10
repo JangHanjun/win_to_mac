@@ -28,6 +28,19 @@ public class GameManager : MonoBehaviour
     void Update() {
         UIMoney.text = playerMoney.ToString();
     }
+
+    // Stages
+    public void NextStage(){
+        // 스테이지 인덱스 변경
+        if(stageIndex < stages.Length - 1){
+            stages[stageIndex].SetActive(false);
+            stageIndex++;
+            stages[stageIndex].SetActive(true);
+            PlayerRespwan();
+        } else{
+            Debug.Log("Game Clear");
+        }
+    }
     // GameOver
     public void GameOver() {
         Debug.Log("Game Over...");
@@ -40,6 +53,7 @@ public class GameManager : MonoBehaviour
 
 
     void PlayerRespwan(){
+        player.transform.position = new Vector3(0, 0, -1);
         player.velocityZero();
     }
 }

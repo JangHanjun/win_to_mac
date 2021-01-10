@@ -1,4 +1,4 @@
-﻿using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -31,10 +31,12 @@ public class BossMonsterPattern : MonoBehaviour
                 pattern = BossState.Pattern1;
                 StartCoroutine(BeforePattern1());
             } else {
-                yield return new WaitForSeconds(0.2f);
+                yield return new WaitForSeconds(0.5f);
             }
         }
     }
+    // Todo : 플레이어가 범위 밖으로 나가면 어떻게 할 것인가.
+    // 사실 생각해보면 보스는 보스 전용방에 있으니 상관없지 않나
     void OnTriggerStay2D(Collider2D other) {
         if(other.tag == "Player"){
             playerPos = other.transform.position;
