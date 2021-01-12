@@ -13,7 +13,6 @@ public class BossMonsterPattern : MonoBehaviour
     Vector3 whereToAtk;
     public GameObject warning;
     public GameObject Atk1;
-
     void Start() {
         pattern = BossState.Setting;
         StartCoroutine(SettingPattern()); 
