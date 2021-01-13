@@ -41,6 +41,9 @@ public class GameManager : MonoBehaviour
             Debug.Log("Game Clear");
         }
     }
+    public void RandomStage(){
+        // 로그라이크식 랜덤
+    }
     // GameOver
     public void GameOver() {
         Debug.Log("Game Over...");

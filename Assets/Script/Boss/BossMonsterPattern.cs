@@ -17,7 +17,6 @@ public class BossMonsterPattern : MonoBehaviour
         pattern = BossState.Setting;
         StartCoroutine(SettingPattern()); 
     }
-    
     WaitForSeconds frame = new WaitForSeconds(0.1f);
     IEnumerator SettingPattern(){
         Debug.Log("loading");
