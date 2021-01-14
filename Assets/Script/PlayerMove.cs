@@ -176,7 +176,7 @@ public class PlayerMove : MonoBehaviour {
             playerDamaged(collision.transform.position);
         }
     }
-    void playerDamaged(Vector2 enemyPos) {
+    public void playerDamaged(Vector2 enemyPos) {
         // Hp decrease
         if(currentShield > 0){
             currentShield -= 1;
